@@ -4,6 +4,7 @@ import { makeStyles } from 'tss-react/mui';
 import EditUser from './EditUser';
 import UserListing from './UserListing';
 import CreateUser from './CreateUser';
+import './Profile.css'
 import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
@@ -74,32 +75,81 @@ export default function Profile() {
                     <Typography variant="h5">
                         Welcome {user.fname} {user.lname}
                     </Typography>
-                    
+                    <Card>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Friends
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Groups
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Pages
+                        </Button>
+                    </Card>
+                </CardContent>
+            </Card>
+            
+            <Card>
+                <CardContent>
+                    <div className="card__title">Omer Ali</div>
+                    <Typography variant="h5">
+                        <div className="card__image">
+                            <img src="https://picsum.photos/300/200?random=10"/>
+                        </div>
+                        <p className="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
+                    </Typography>
+                    <Card>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Comments
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Share
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Likes
+                        </Button>
+                    </Card>
                 </CardContent>
             </Card>
             <Card>
-                <Button color="primary" className="px-4"
-                    onClick={routeChange}
-                >
-                    Friends
-                </Button>
-                <Button color="primary" className="px-4"
-                    onClick={routeChange}
-                >
-                    Groups
-                </Button>
-                <Button color="primary" className="px-4"
-                    onClick={routeChange}
-                >
-                    Pages
-                </Button>
-            </Card>
-            <Card>
                 <CardContent>
-                    <Avatar src={user.avatar} className={classes.large} />
+                    <div className="card__title">Jhonny Deep</div>
                     <Typography variant="h5">
-                        Bilal {user.fname} {user.lname}
+                        <div className="card__image">
+                            <img src="https://picsum.photos/300/200?random=1" />
+                        </div>
+                        <p className="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
                     </Typography>
+                    <Card>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Comments
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Share
+                        </Button>
+                        <Button color="primary" className="px-4"
+                            onClick={routeChange}
+                        >
+                            Likes
+                        </Button>
+                    </Card>
+
                 </CardContent>
             </Card>
         </div>

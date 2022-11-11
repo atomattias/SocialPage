@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+hr {
+    flex: 0 0 100%;
+}
+
+body {
+    padding: 1rem 1.5rem;
+    border-radius: 0.125rem;
+    border: 1px solid;
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+}
+
+.header__branding {
+    text-align: center;
+    margin: 0 30px;
+    padding: 1em;
+    display: block;
+    justify-content: space-between;
+}
+
+.header__nav {
+    display: flex;
+    flex-direction: row;
+    font-weight: 600;
+    font-size: 18px;
+    list-style: none;
+    justify-content: center;
+}
+
+.section {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.section__heading {
+    margin: 50px auto;
+    font-size: 16px;
+    display: flex;
+    flex-flow: row wrap;
+    width: 90%;
+}
+
+.btn {
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 2px;
+    font-size: 12px;
+    background-color: white;
+    padding: 0.5rem 1rem;
+}
+.fa-vine {
+    background: #00b489;
+    color: white;
+}
+
+.btn__text {
+    padding: 0 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.btn:hover {
+    color: rgb(0 0 0 / 20%);
+    font-weight: 600;
+    box-shadow: 0 0 40px -10px rgb(0 0 0 / 25%);
+    transform: translateY(-3px);
+    transition: all 0.3s ease 0s;
+    background-color: lightgray;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+.card {
+    width: 20%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.3s;
+}
+
+.card__body {
+    padding: 10px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px;
+}
+
+.card__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    filter: contrast(70%);
+    overflow: hidden;
+    position: relative;
+    transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+}
+
+.card__title {
+    color: rgb(244, 237, 237);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+
+.card__text {
+    flex: 1 1 auto;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    text-justify: newspaper;
+}
+
+.card__btn {
+    display: flex;
+    padding: 0;
+    justify-items: flex-start;
+}
+
+@media screen and (max-width: 1000px) {
+    .card {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .container {
+        width: 80%;
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .card {
+        width: 80%;
+    }
+}
