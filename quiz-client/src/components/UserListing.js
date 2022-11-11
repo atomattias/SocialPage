@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const UserListing = () => {
     const [contdata, contdatachange] = useState(null);
     const navigate = useNavigate();
+    window.location = "/"
 
     const Removefunction = (id) => {
         if (window.confirm("Do you really want to delete?")) {
@@ -38,7 +39,7 @@ const UserListing = () => {
     return (
         <div>
             <div>
-                <h2>User List</h2>
+                <h2>Friends List</h2>
             </div>
             <div>
                 <div>

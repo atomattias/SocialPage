@@ -1,11 +1,8 @@
 import React from 'react';
-import {Button, styles, Avatar, MenuItem, Menu, IconButton, AppBar, Toolbar, CardContent, Card, Box, TextField, Typography, Grid, FormControlLabel, Paper} from '@mui/material';
+import { Button, Avatar, MenuItem, Menu, IconButton, AppBar, Toolbar, CardContent, Card, Typography } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
-import EditUser from './EditUser';
-import UserListing from './UserListing';
-import CreateUser from './CreateUser';
 import './Profile.css'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
+import { redirect, useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,8 +35,12 @@ export default function Profile() {
     };
     let navigate = useNavigate();
     const routeChange = () => {
-        let path = `/UserListing`;
+        // redirect("/UserListing")
+
+        let path = `/Friends`;
         navigate(path);
+
+        window.location.href = "Friends"
     }
 
     const handleLogout = () => {
@@ -50,6 +51,7 @@ export default function Profile() {
 
     return (
         <div className={classes.root}>
+
             <AppBar position="static">
                 <Toolbar>
                     <Typography variant="h6" className={classes.title}>
@@ -60,9 +62,9 @@ export default function Profile() {
                             <Avatar src={user.avatar} />
                         </IconButton>
                         <Menu id="menu-appbar"
-                              anchorEl={anchorEl}
-                              open={open}
-                              onClose={handleClose}
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleClose}
                         >
                             <MenuItem onClick={handleLogout}>Logout</MenuItem>
                         </Menu>
@@ -71,13 +73,12 @@ export default function Profile() {
             </AppBar>
             <Card className={classes.root} variant="outlined">
                 <CardContent>
-                    <Avatar src={user.avatar} className={classes.large} />
                     <Typography variant="h5">
                         Welcome {user.fname} {user.lname}
                     </Typography>
                     <Card>
                         <Button color="primary" className="px-4"
-                            onClick={routeChange}
+                            onClick={() => navigate("/Friends")}
                         >
                             Friends
                         </Button>
@@ -94,13 +95,13 @@ export default function Profile() {
                     </Card>
                 </CardContent>
             </Card>
-            
+
             <Card>
                 <CardContent>
                     <div className="card__title">Omer Ali</div>
                     <Typography variant="h5">
                         <div className="card__image">
-                            <img src="https://picsum.photos/300/200?random=10"/>
+                            <img src="https://picsum.photos/300/200?random=10" />
                         </div>
                         <p className="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
                     </Typography>

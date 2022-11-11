@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import {Button, Avatar, styles, CardContent, Card, Box, TextField, Typography, Grid, FormControlLabel, Paper} from '@mui/material';
+import {Button, Avatar,  TextField, Typography, Grid, Paper} from '@mui/material';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from 'tss-react/mui';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import swal from 'sweetalert';
+import './Profile.css'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -70,51 +71,54 @@ export default function Signin() {
     }
 
     return (
-        <Grid container className={classes.root}>
-            <CssBaseline />
-            <Grid item xs={false} md={7} className={classes.image} />
-            <Grid item xs={12} md={5} component={Paper} elevation={6} square>
-                <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Sign in
-                    </Typography>
-                    <form className={classes.form} noValidate onSubmit={handleSubmit}>
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="email"
-                            name="email"
-                            label="Email Address"
-                            onChange={e => setUserName(e.target.value)}
-                        />
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            required
-                            fullWidth
-                            id="password"
-                            name="password"
-                            label="Password"
-                            type="password"
-                            onChange={e => setPassword(e.target.value)}
-                        />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                        >
-                            Sign In
-                        </Button>
-                    </form>
-                </div>
+        <div class="content">
+            <Grid container className={classes.root}>
+                <CssBaseline />
+                <Grid item xs={false} md={9} className={classes.image} />
+                <Grid item xs={12} md={10} component={Paper} elevation={6} square>
+                    <div className={classes.paper}>
+                        <Avatar className={classes.avatar}>
+                            <LockOutlinedIcon />
+                        </Avatar>
+                        <Typography component="h1" variant="h5">
+                            Sign in
+                        </Typography>
+                        <form className={classes.form} noValidate onSubmit={handleSubmit}>
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="email"
+                                name="email"
+                                label="Email Address"
+                                onChange={e => setUserName(e.target.value)}
+                            />
+                            <TextField
+                                variant="outlined"
+                                margin="normal"
+                                required
+                                fullWidth
+                                id="password"
+                                name="password"
+                                label="Password"
+                                type="password"
+                                onChange={e => setPassword(e.target.value)}
+                            />
+                            <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                color="primary"
+                                className={classes.submit}
+                            >
+                                Sign In
+                            </Button>
+                        </form>
+                    </div>
+                </Grid>
             </Grid>
-        </Grid>
+    </div>
+        
     );
 }

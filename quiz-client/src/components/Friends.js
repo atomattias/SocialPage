@@ -1,9 +1,8 @@
 // import React from 'react';
 // import { Button, styles, Avatar, MenuItem, Menu, IconButton, AppBar, Toolbar, CardContent, Card, Box, TextField, Typography, Grid, FormControlLabel, Paper } from '@mui/material';
 // import { makeStyles } from 'tss-react/mui';
-// import EditUser from './EditUser';
-// import UserListing from './UserListing';
-// import CreateUser from './CreateUser';
+// import React, { useEffect, useState } from "react";
+
 // import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom'
 
 // const useStyles = makeStyles((theme) => ({
@@ -46,6 +45,33 @@
 //         localStorage.removeItem("user");
 //         window.location.href = "/prfole";
 //     };
+//     const Removefunction = (id) => {
+//         if (window.confirm("Do you really want to delete?")) {
+//             // delete endpoint one method
+//             fetch("https://localhost:7096/api/User/" + id, {
+//                 method: "DELETE"
+//             }).then((res) => {
+//                 alert('Deleted successfully.')
+//                 window.location.reload();
+//             }).catch((err) => {
+//                 console.log(err.message)
+//             })
+//         }
+//     }
+
+//     const LoadEdit = (id) => {
+//         navigate('/user/edit/' + id);
+//     }
+//     // get all endpoint method
+//     useEffect(() => {
+//         fetch("https://localhost:7096/api/User").then((res) => {
+//             return res.json();
+//         }).then((resp) => {
+//             contdatachange(resp);
+//         }).catch((err) => {
+//             console.log(err.message);
+//         })
+//     }, [])
 
 //     return (
 //         <div className={classes.root}>
@@ -69,71 +95,32 @@
 //                 </Toolbar>
 //             </AppBar>
 //             <Card className={classes.root} variant="outlined">
-//                 <CardContent>
-//                     <div class="content">
-
-//                         <article class="card">
-//                             <div class="card__image">
-//                                 <img src="https://picsum.photos/300/200?random=1" />
-//                             </div>
-//                             <div class="card__body">
-//                                 <div class="card__title">Heading for Article</div>
-//                                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi delectus dolores illo libero necessitatibus nobis perferendis repellat reprehenderit tenetur vitae.</p>
-//                                 <ul class="card__btn">
-//                                     <button class="btn">Read</button>
-//                                     <button class="btn">Share</button>
-//                                 </ul>
-
-//                             </div>
-//                         </article>
-
-//                         <article class="card">
-//                             <div class="card__image">
-//                                 <img src="https://picsum.photos/300/200?random=2" />
-//                             </div>
-//                             <div class="card__body">
-//                                 <div class="card__title">Heading for Article</div>
-//                                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
-//                                 <ul class="card__btn">
-//                                     <button class="btn">Read</button>
-//                                     <button class="btn">Share</button>
-//                                 </ul>
-
-//                             </div>
-//                         </article>
-
-//                         <article class="card">
-//                             <div class="card__image">
-//                                 <img src="https://picsum.photos/300/200?random=3" />
-//                             </div>
-//                             <div class="card__body">
-//                                 <div class="card__title">Heading for Article</div>
-//                                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
-//                                 <ul class="card__btn">
-//                                     <button class="btn">Read</button>
-//                                     <button class="btn">Share</button>
-//                                 </ul>
-
-//                             </div>
-//                         </article>
-
-//                         <article class="card">
-//                             <div class="card__image">
-//                                 <img src="https://picsum.photos/300/200?random=4" />
-//                             </div>
-//                             <div class="card__body">
-//                                 <div class="card__title">Heading for Article</div>
-//                                 <p class="card__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, deleniti eius error, excepturi expedita, facilis id ipsa iste iusto modi numquam placeat porro provident quasi qui sunt tenetur velit voluptas?</p>
-//                                 <ul class="card__btn">
-//                                     <button class="btn">Read</button>
-//                                     <button class="btn">Share</button>
-//                                 </ul>
-
-//                             </div>
-//                         </article>
-//                     </div>
-
-//                 </CardContent>
+//                 <table>
+//                     <thead >
+//                         <tr>
+//                             <td>Name</td>
+//                             <td>Email</td>
+//                             <td>Phone</td>
+//                             <td>Address</td>
+//                             <td>Action</td>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {contdata &&
+//                             contdata.map(item => (
+//                                 <tr key={item.id}>
+//                                     <td>{item.fullName}</td>
+//                                     <td>{item.email}</td>
+//                                     <td>{item.phone}</td>
+//                                     <td>{item.address}</td>
+//                                     <td><a style={{ color: "blue" }} onClick={() => { LoadEdit(item.id) }}>Edit  </a>/
+//                                         <a style={{ color: "red" }} onClick={() => { Removefunction(item.id) }}>  Delete</a>
+//                                     </td>
+//                                 </tr>
+//                             ))
+//                         }
+//                     </tbody>
+//                 </table>
 //             </Card>
 //             <Card>
 //                 <Button color="primary" className="px-4"
